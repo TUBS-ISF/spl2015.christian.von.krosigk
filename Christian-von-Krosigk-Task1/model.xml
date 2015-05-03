@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="AMP">
+				<description>
+					Programm zur Wiedergabe von Audiodateien, wie MP3, WMA, etc.
+				</description>
+				<and mandatory="true" name="GUI">
+					<description>
+						GUI für den Player. Mandatory, da der Player über diese gesteuert wird.
+						Enthält die grundlegenden Buttons, wie Play/Pause, Stop, Open (Datei).
+					</description>
+					<feature name="ShowCover">
+						<description>
+							Wenn in der Musikdatei ein Cover gespeichert ist, kann es mit Hilfe dieses Features in der GUI angezeigt werden.
+						</description>
+					</feature>
+					<feature name="ShowCurrentSong">
+						<description>
+							Eine Anzeige in der GUI, die Daten zu dem aktuellen Song anzeigt.
+							
+							Z.B. Titel, Interpret, Länge
+						</description>
+					</feature>
+					<or abstract="true" name="TrackTime">
+						<description>
+							Eine Anzeige der Track-Länge und der abgelaufenen Zeit.
+						</description>
+						<feature mandatory="true" name="ProgressBar">
+							<description>
+								Graphische Anzeige der abgelaufenen Zeit mit Hilfe einer Progressbar.
+							</description>
+						</feature>
+						<feature mandatory="true" name="ShowTime">
+							<description>
+								Textuelle Anzeige der Länge und abgelaufenen Zeit.
+							</description>
+						</feature>
+					</or>
+					<and name="VolumeControl">
+						<description>
+							Ein Schieberegler in der GUI um die Lautstärke zu regeln.
+						</description>
+						<feature name="Mute">
+							<description>
+								Ein Button um die Wiedergabelautstärke aus zu schalten.
+							</description>
+						</feature>
+					</and>
+					<and name="Playlist">
+						<description>
+							Eine Liste der wiederzugebenden Musikdateien.
+						</description>
+						<feature mandatory="true" name="LoadFolder">
+							<description>
+								Ein Button um ganze Ordner zu laden, damit nicht jede Datei einzeln geladen werden muss.
+							</description>
+						</feature>
+						<or abstract="true" name="Control">
+							<description>
+								Abstraktes Feature, falls aus der Untergruppe kein Feature gewählt werden soll.
+								Dient vor allem zur übersichtlicheren Gestaltung des Modells.
+							</description>
+							<feature mandatory="true" name="ShuffleRepeat">
+								<description>
+									Ein Button, der eine Shuffle-Operation auf die Playlist-Einträge ausführt.
+								</description>
+							</feature>
+							<feature mandatory="true" name="SkipTrack">
+								<description>
+									Ein Button, der den aktuellen Song überspringt und die Wiedergabe des nächsten Songs beginnt.
+								</description>
+							</feature>
+							<and mandatory="true" name="RemoveTrack">
+								<description>
+									Das Feature erlaubt das Entfernen eines einzelnen Songs aus der Playliste.
+									z.B. über die Taste 'Entf', ein Kontextmenü oder ein Button.
+								</description>
+								<feature name="ClearPlaylist">
+									<description>
+										Die Möglichkeit, alle Einträge aus der Liste zu entfernen.
+									</description>
+								</feature>
+							</and>
+							<feature mandatory="true" name="ReorderPlaylist">
+								<description>
+									Bietet die Möglichkeit, die Playliste nach verschiedenen Gesichtspunkten zu ordnen.
+									Auswahl der Möglichkeiten z.B. über Kontextmenü oder Spalten-Header der Liste.
+									Gesichtspunkte: Titel, Interpret, Pfad, Länge (?), Genre
+								</description>
+							</feature>
+						</or>
+						<feature name="SavePlaylist">
+							<description>
+								Button um die Playliste zu speichern.
+							</description>
+						</feature>
+						<feature name="LoadPlaylist">
+							<description>
+								Button um eine Playliste zu laden.
+							</description>
+						</feature>
+					</and>
+					<or name="Skins">
+						<description>
+							Skins für eine unterschiedliche Darstellung der GUI.
+							Die verschiedenen Skins können über ein Menü in der MenuBar ausgewählt werden.
+						</description>
+						<feature mandatory="true" name="Light">
+							<description>
+								Die GUI wird in einem hellen Design dargestellt.
+							</description>
+						</feature>
+						<feature mandatory="true" name="Dark">
+							<description>
+								Die GUI wird in einem dunklen Design dargestellt.
+							</description>
+						</feature>
+					</or>
+				</and>
+				<feature mandatory="true" name="PlayEngine">
+					<description>
+						Engine zur Wiedergabe der Musik-Dateien.
+						Könnte später durch mögliche Subfeatures ergänzt werden, die unterschiedliche Engine/Codecs enthalten.
+					</description>
+				</feature>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<conj>
+					<imp>
+						<var>SavePlaylist</var>
+						<var>LoadPlaylist</var>
+					</imp>
+					<imp>
+						<var>LoadPlaylist</var>
+						<var>SavePlaylist</var>
+					</imp>
+				</conj>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
