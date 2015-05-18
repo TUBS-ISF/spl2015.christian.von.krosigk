@@ -1,0 +1,16 @@
+The MP3-Player was tested with these sets of parameters:
+
+// 				showCover, inTitle, inProgBar, volUp, volDown, muteIt
+boolean[] config_1 = {true,false,true,false,false,false}; // no volume control
+boolean[] config_2 = {false,true,true,true,true,true}; // no cover
+boolean[] config_3 = {true,true,true,true,true,true}; // all features
+
+They can be found in the Main.java File in lines 50-53.
+To choose a different set change the choosen config in line 55.
+
+vars = config_X;  <<< change X for {1,2,3}
+
+The used libaries are free to use and can be found on github.com:
+
+https://github.com/mpatric/mp3agic
+

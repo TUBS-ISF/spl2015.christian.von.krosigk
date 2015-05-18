@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="AMP">
+				<and mandatory="true" name="GUI">
+					<feature name="ShowCurrentSong"/>
+					<feature name="ShowCover"/>
+					<or mandatory="true" name="TrackTime">
+						<feature mandatory="true" name="ProgressBar"/>
+						<feature mandatory="true" name="ShowTime"/>
+					</or>
+					<or name="VolumeControl">
+						<feature mandatory="true" name="Mute"/>
+					</or>
+					<and name="Playlist">
+						<feature name="LoadFolder"/>
+						<feature name="ShuffleRepeat"/>
+					</and>
+				</and>
+				<feature mandatory="true" name="PlayEngine"/>
+				<feature mandatory="true" name="ChooseFile"/>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
