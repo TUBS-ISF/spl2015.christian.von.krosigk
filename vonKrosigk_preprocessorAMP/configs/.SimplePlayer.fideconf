@@ -1,0 +1,25 @@
+# Lists all features from the model with manual (first digit) and automatic (second digit) selection
+# 0 = deselected, 1 = selected, 2 = undefined
+11AMP
+11GUI
+22ShowCover
+22ShowCurrentSong
+22TrackTime
+22ProgressBar
+22ShowTime
+22VolumeControl
+22Mute
+22Playlist
+22LoadFolder
+22Control
+22ShuffleRepeat
+22SkipTrack
+22RemoveTrack
+22ClearPlaylist
+22ReorderPlaylist
+22SavePlaylist
+22LoadPlaylist
+22Skins
+22Light
+22Dark
+11PlayEngine

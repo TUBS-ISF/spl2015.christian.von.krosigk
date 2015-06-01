@@ -1,0 +1,12 @@
+
+The used libaries are free to use and can be found on github.com:
+
+https://github.com/mpatric/mp3agic
+
+I had some problems with the preprocessor and couldn't find a solution.
+
+I added the commands in the MP3Gui.java, 
+but couldn't get antenna preprocessor working with the selected configurations.
+
+I also have some problems with the song infos.
+The song info feature works well with older mp3-files, but won't work with new ones.
