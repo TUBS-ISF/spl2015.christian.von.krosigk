@@ -2,7 +2,7 @@
 # 0 = deselected, 1 = selected, 2 = undefined
 11AMP
 11GUI
-22ShowCover
+12ShowCover
 22ShowCurrentSong
 22TrackTime
 22ProgressBar
@@ -11,12 +11,12 @@
 22Mute
 11Playlist
 11LoadFolder
-21Control
-12ShuffleRepeat
-12SkipTrack
-11RemoveTrack
-12ClearPlaylist
-12ReorderPlaylist
+22Control
+22ShuffleRepeat
+22SkipTrack
+22RemoveTrack
+22ClearPlaylist
+22ReorderPlaylist
 11SavePlaylist
 11LoadPlaylist
 22Skins

@@ -47,7 +47,7 @@
 							</description>
 						</feature>
 					</and>
-					<and abstract="true" name="Playlist">
+					<and name="Playlist">
 						<description>
 							Eine Liste der wiederzugebenden Musikdateien.
 						</description>
