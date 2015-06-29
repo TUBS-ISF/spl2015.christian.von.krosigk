@@ -129,7 +129,7 @@ public class MP3Gui extends JFrame implements ActionListener { //, ListSelection
 		progBar = new JProgressBar();
 		progBar.setSize(20,	100);
 		//#ifdef ProgressBar
-//@		// progBar.setStringPainted(true);
+		// progBar.setStringPainted(true);
 		//#endif
 		
 		// Volumebar
@@ -252,7 +252,7 @@ public class MP3Gui extends JFrame implements ActionListener { //, ListSelection
 		volumeButtonPanel.add(volDownButton);
 		volumeButtonPanel.add(volUpButton);
 		//#ifdef Mute
-//@		volumeButtonPanel.add(muteButton);
+		volumeButtonPanel.add(muteButton);
 		//#endif
 		
 		volumePanel.add(volBar);
@@ -281,8 +281,8 @@ public class MP3Gui extends JFrame implements ActionListener { //, ListSelection
 		rightPanel.add(new JScrollPane(playList));
 		rightPanel.add(Box.createVerticalStrut(5));
 		//#ifdef ShuffleRepeat
-//@		rightPanel.add(shuffleButtonPanel);
-//@		rightPanel.add(Box.createVerticalStrut(5));
+		rightPanel.add(shuffleButtonPanel);
+		rightPanel.add(Box.createVerticalStrut(5));
 		//#endif
 		
 		mainPanel.add(leftPanel);
@@ -428,7 +428,7 @@ public class MP3Gui extends JFrame implements ActionListener { //, ListSelection
 				long actualTime = guiMP3Player.getTimeInMillisekonds();
 				actTime = sdf.format(new Date(actualTime));
 				//#ifdef ShowTime
-//@				setTitle(mp3artist + " - "+ mp3title + ": " + actTime + " / " + mp3length);
+				setTitle(mp3artist + " - "+ mp3title + ": " + actTime + " / " + mp3length);
 				//#endif
 				progBar.setValue((int)actualTime);
 				progBar.setString(mp3artist + " - "+ mp3title + ": " + actTime + " / " + mp3length);
@@ -592,7 +592,7 @@ public class MP3Gui extends JFrame implements ActionListener { //, ListSelection
 			guiMP3Player.openFile(filePath);
 			guiMP3Player.setVolume((float) volBar.getValue());
 			//#ifdef ShowTime
-//@			setTitle(mp3artist + " - "+ mp3title + ":  00:00 / 00:00");
+			setTitle(mp3artist + " - "+ mp3title + ":  00:00 / 00:00");
 			//#endif
 			progBar.setStringPainted(true);
 			progBar.setString(mp3artist + " - "+ mp3title + ":  00:00 / 00:00");
