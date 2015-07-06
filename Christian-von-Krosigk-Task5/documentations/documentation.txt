@@ -7,4 +7,14 @@ I also have some problems with the song infos.
 The song info feature works well with older mp3-files, but won't work with new ones.
 A song, where the name and album display works, can be found in the music example folder.
 
+Auswahl einzelner Feature funktioniert, die Kombination klappt nicht, es
+wird immer nur das im Baum an letzter Stelle stehende Feature
+übernommen.
+Eine Hierarchie über $$ Zeichen führt nur zur Erstellung neuer Klassen
+mit diesem Namen im src-Ordner und zu Fehlern, die daraus resultieren,
+obwohl Mixin als Kompositionsmechanismus ausgewählt ist.
+Vermutlich liegt das Problem darin, dass die Feature zu weit über den
+Quellcode verteilt sind (scattering) und sich z.B. nicht in einzelnen
+Methoden befinden. Um das Problem zu beheben, müsste der gesamte
+Quellcode der GUI überarbeitet und neu strukturiert werden...
 
