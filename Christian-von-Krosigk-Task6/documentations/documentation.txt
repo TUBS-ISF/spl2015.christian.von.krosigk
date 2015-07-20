@@ -1,0 +1,10 @@
+
+The used libaries are free to use and can be found on github.com:
+
+https://github.com/mpatric/mp3agic
+
+I also have some problems with the song infos.
+The song info feature works well with older mp3-files, but won't work with new ones.
+A song, where the name and album display works, can be found in the music example folder.
+
+
